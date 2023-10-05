@@ -31,8 +31,8 @@ h1{
     height: 60%;
     left: 5%;
     right: 5%;
-    top: 20%;
-    bottom: 20%;
+    top: 15%;
+    bottom: 25%;
     
 }
 .cards{
@@ -109,9 +109,9 @@ h1{
 }
 footer{
     width: 70%;
-    bottom: 5%;
+    bottom: 7%;
     left:15%;
-    position: absolute;
+    position: fixed;
     height: 60px;
     display: flex;
     justify-content: space-evenly;
