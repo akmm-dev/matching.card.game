@@ -12,7 +12,7 @@ function flipCard(e) {
     if (clickedCard !== cardOne && !disableDeck) {
         clickedCard.classList.add('flip');
         totalFlip++;
-        document.getElementById('flipCount').innerHTML=totalFlip;
+        document.querySelector('#flipsCount').innerHTML = totalFlip;
         if (!cardOne) {
             return cardOne = clickedCard;
             
@@ -31,12 +31,15 @@ function flipCard(e) {
 
 
 function matchCard(img1, img2) { 
-    console.log(img1, img2);
     if (img1 === img2) {
         matchedCard++;
-        if (matchedCard === 8) {
-            setTimeout(() =>
-            {shuffleCard()},800);
+        if (matchedCard === 8) {          
+            document.querySelector('.g-b-h').style.display = 'block';
+            document.querySelector('#next').style.display = 'block';
+            document.querySelector('.cards').style.display = 'none';
+            document.querySelector('#f-h').style.display = 'none';
+            document.querySelector('#flipCount').innerHTML = totalFlip;
+            
         }
         cardOne.removeEventListener('click', flipCard);
         cardTwo.removeEventListener('click', flipCard);
@@ -56,17 +59,22 @@ function matchCard(img1, img2) {
         
     }
 }
+
 function shuffleCard() {
     cardOne, cardTwo = '';
     matchedCard = 0;
     disableDeck = false;
-    totalFlip = 0;
-    document.getElementById('flipCount').innerHTML=totalFlip;
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
 
     array.sort(() => Math.random() < 0.5 ? 1 : -1);
     
-    
+    document.querySelector('.g-b-h').style.display = 'none';
+    document.querySelector('#next').style.display = 'none';
+    document.querySelector('.cards').style.display = 'flex';
+    document.querySelector('#f-h').style.display = '';
+
+    totalFlip = '0';
+    document.querySelector('#flipsCount').innerHTML = totalFlip;
 
     cards.forEach((card ,index )=> {
         let imgTag = card.querySelector('img');

@@ -9,7 +9,7 @@
 <body>
     <h1>Matching Card Game</h1>
     <div class="game-body">
-
+        <h2 class="g-b-h">Total-Flip: <span id="flipCount"> 0 </span> </h2>
         <ul class="cards">
             <li class="card">
                 <div class="view front-view">
@@ -142,7 +142,8 @@
         </ul>
     </div>
     <footer>
-        <h1>Total-Flip: <span id="flipCount"> 0 </span> </h1>
+        <h1 id="f-h">Total-Flip: <span id="flipsCount"> 0 </span> </h1>
+        <button id="next" onclick='shuffleCard()'>Next Game</button>
     </footer>
 </body>
 <script src="./script.js"></script>
